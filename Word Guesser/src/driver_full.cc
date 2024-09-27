@@ -6,13 +6,6 @@
 
 using namespace std;
 
-// Write your driver for part 2 in this file. 
-
-// Create and use your own functions in this file. 
-// You do not want your main function over ~40 lines 
-// of code to help with readability and reusability.
-
-// Additional functions required for Part 2
 void NeutralGame() {
 
   int word_length = GetLengthOfWord();

@@ -16,10 +16,9 @@ string PickWord(unsigned int size, int random_seed) {
 
   srand(random_seed);
 
-  // TODO init variables you need
   vector<string> vect;
 
-  // opens file with the name, kDictionaryFile
+  // opens file
   ifstream f_in(kDictionaryFile);
 
   // Checks that the file was opened correctly
@@ -36,7 +35,6 @@ string PickWord(unsigned int size, int random_seed) {
     }
   }
 
-  // TODO
   return vect[rand() % vect.size()];
 
 }
@@ -93,8 +91,7 @@ bool WordCompleted(const string& word) {
 
 // REQUIRES:
 // MODIFIES: cout
-// EFFECTS: Prints to standard output the current state of the game. DO NOT
-//          EDIT.
+// EFFECTS: Prints to standard output the current state of the game. 
 void PrintState(const string& mystery_word_so_far, unsigned int misses) {
   cout << endl;
   cout << "--- Current State --- " << endl;
@@ -111,9 +108,6 @@ void PrintState(const string& mystery_word_so_far, unsigned int misses) {
 // REQUIRES:
 // MODIFIES: cout, cin
 // EFFECTS: Returns a number between (1, 10] from the user.
-//  cout statements:
-//    cout << "Enter a word length: ";
-//    cout << "Invalid length. Please enter a length between (1, 10] : ";
 int GetLengthOfWord() { 
 
   int length;
@@ -132,10 +126,6 @@ int GetLengthOfWord() {
 // REQUIRES:
 // MODIFIES: cout, cin
 // EFFECTS: Returns a lowercase letter not in guessed_letters from the user.
-//  cout statements:
-//    cout << "What is your next guess? " << endl;
-//    cout << "Invalid guess. Please enter a lowercase letter that you have "
-//       << "not guessed yet : " << endl;
 char GetNextGuess(const vector<char>& guessed_letters) { 
 
   char next_guess = ' ';
@@ -175,9 +165,6 @@ bool CheckWordForGuess(string& word_so_far, string word, char guess) {
 // REQUIRES:
 // MODIFIES: cout
 // EFFECTS: Prints feedback to the user if the guess is in the word.
-//  cout statements:
-//    cout << "The letter \'" << guess << "\' is not in the word." << endl;
-//    cout << "The letter \'" << guess << "\' is in the word!" << endl;
 void GuessFeedback(bool correct_guess, char guess) {
 
   if (correct_guess) {
@@ -192,10 +179,6 @@ void GuessFeedback(bool correct_guess, char guess) {
 // MODIFIES: cout
 // EFFECTS: Returns true if word_so_far has no '-' characters or if misses
 //          equals kMaxMisses. In both cases it also prints out feedback.
-//  cout statements:
-//    cout << "You win! You guessed the word, " << word_so_far << "." << endl;
-//    cout << "You used up your last guess and lost!" << endl;
-//    cout << "The word was, " << solution << "." << endl;
 bool CheckEndConditions(const string& word_so_far, unsigned int misses, const string& solution) {
 
   if (misses == kMaxMisses) {

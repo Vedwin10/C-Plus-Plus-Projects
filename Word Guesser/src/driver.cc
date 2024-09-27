@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// Write your driver for part 1 here
+// Small version of game with normal mode and no evil algorithm
 
 int main() {
     
